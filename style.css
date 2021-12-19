@@ -1,0 +1,215 @@
+@font-face {
+  font-family: "Geosans";
+  src: url("./assets/general/GeosansLight.eot");
+  src: url("./assets/general/GeosansLight.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/general/GeosansLight.woff") format("woff"),
+    url("./assets/general/GeosansLight.ttf") format("truetype");
+}
+
+body {
+  font-family: "Geosans";
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --crypto-stars-bg: #2b2b2b;
+  --crypto-stars-bg-dark: #212121;
+  --yellow-text-clr: #ffd862;
+  --default-text-color: #fff;
+}
+
+.page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100%;
+  flex-basis: 800px;
+  background: var(--crypto-stars-bg);
+  padding: 0 30px;
+}
+
+.title-line {
+  position: absolute;
+  height: min(90px, 10vw);
+  width: 100%;
+  top: min(120px, 14vw);
+  left: 0;
+  z-index: 1;
+}
+
+.title-line.dark {
+  filter: brightness(0.7);
+}
+
+.cubes {
+  position: absolute;
+  bottom: 3vw;
+  right: 3vw;
+  width: 150px;
+  z-index: 3;
+}
+
+.yellow-text {
+  color: var(--yellow-text-clr);
+}
+
+.footer {
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  left: calc(50% - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  font-size: min(1.6rem, 5vw);
+}
+
+.icons {
+  background-color: var(--yellow-text-clr);
+  border-radius: 5px;
+  padding: 0 3px;
+}
+
+.icons i {
+  background-color: #fff;
+  margin: 3px;
+  transition: transform .2s ease-in-out;
+}
+
+.icons i:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.facebook-icon {
+  color: #3b5998 !important;
+}
+
+.twitter-icon {
+  color: #00acee !important;
+}
+
+.reddit-icon {
+  color: #FF4500 !important;
+}
+
+.mail-icon {
+  color: #EA4335 !important;
+}
+
+#crypto-stars {
+  background: var(--crypto-stars-bg-dark);
+}
+
+.page-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: min(330px, 36vw);
+  width: 100%;
+}
+
+.title-icon {
+  width: min(250px, 25vw);
+}
+
+.title-title {
+  width: min(350px, 40vw);
+}
+
+.title-apps {
+  text-align: center;
+  transform: translateY(30px);
+}
+
+.appstore {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.appstore img {
+  width: min(130px, 18vw);
+}
+
+/* Body */
+.page-body {
+}
+
+.description {
+  margin: 10px auto;
+  padding: 0 30px;
+}
+
+.description p {
+  font-size: min(1.6rem, 5vw);
+}
+
+.description span {
+  color: var(--yellow-text-clr);
+}
+
+.screenshots {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.screenshots img {
+  width: 30%;
+  margin-top: 20px;
+}
+
+.icons {
+  display: flex;
+}
+
+.icons i {
+  color: #fff;
+  font-size: 2rem;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .screenshots img:last-child {
+    margin-bottom: 100px;
+  }
+
+  .cubes {
+    width: 70px;
+  }
+
+  .title-apps {
+    transform: translateY(20px);
+  }
+
+  .appstore {
+    margin-top: 5px;
+  }
+
+  .screenshots {
+    flex-direction: column;
+  }
+
+  .screenshots img {
+    width: 80%;
+  }
+}

@@ -63,6 +63,7 @@ body {
 
 .yellow-text {
   color: var(--yellow-text-clr);
+  text-decoration: none;
 }
 
 .footer {
@@ -84,6 +85,7 @@ body {
   background-color: var(--yellow-text-clr);
   border-radius: 5px;
   padding: 0 3px;
+  margin-bottom: 10px;
 }
 
 .icons i {
@@ -148,6 +150,7 @@ body {
 
 .appstore img {
   width: min(130px, 18vw);
+  height: 100%;
 }
 
 /* Body */
@@ -156,15 +159,12 @@ body {
 
 .description {
   margin: 10px auto;
-  padding: 0 30px;
+  padding: 0 20px;
+  text-align: center;
 }
 
 .description p {
   font-size: min(1.6rem, 5vw);
-}
-
-.description span {
-  color: var(--yellow-text-clr);
 }
 
 .screenshots {

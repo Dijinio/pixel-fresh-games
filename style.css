@@ -20,9 +20,9 @@ body {
 
 :root {
   --crypto-stars-bg: #2b2b2b;
-  --crypto-stars-bg-dark: #212121;
   --yellow-text-clr: #ffd862;
   --default-text-color: #fff;
+  --font-size: min(1.4rem, 4.3vw);
 }
 
 .page-wrapper {
@@ -34,31 +34,21 @@ body {
 
 .page-container {
   position: relative;
-  min-height: 100%;
   flex-basis: 800px;
+  padding: 0 20px;
+}
+
+#crypto-stars {
   background: var(--crypto-stars-bg);
-  padding: 0 30px;
 }
 
 .title-line {
   position: absolute;
-  height: min(90px, 10vw);
+  height: 9vmin;
   width: 100%;
-  top: min(120px, 14vw);
+  top: 8vmin;
   left: 0;
   z-index: 1;
-}
-
-.title-line.dark {
-  filter: brightness(0.7);
-}
-
-.cubes {
-  position: absolute;
-  bottom: 3vw;
-  right: 3vw;
-  width: 150px;
-  z-index: 3;
 }
 
 .yellow-text {
@@ -66,19 +56,28 @@ body {
   text-decoration: none;
 }
 
-.footer {
+.page-footer {
   position: absolute;
+  height: 80px;
   width: 200px;
-  bottom: 0;
   left: calc(50% - 100px);
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.footer p {
-  font-size: min(1.6rem, 5vw);
+.page-footer p {
+  font-size: var(--font-size);
+}
+
+.cubes {
+  position: absolute;
+  bottom: 1vw;
+  right: 1vw;
+  width: 150px;
+  z-index: 3;
 }
 
 .icons {
@@ -91,7 +90,7 @@ body {
 .icons i {
   background-color: #fff;
   margin: 3px;
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .icons i:hover {
@@ -108,15 +107,11 @@ body {
 }
 
 .reddit-icon {
-  color: #FF4500 !important;
+  color: #ff4500 !important;
 }
 
 .mail-icon {
-  color: #EA4335 !important;
-}
-
-#crypto-stars {
-  background: var(--crypto-stars-bg-dark);
+  color: #ea4335 !important;
 }
 
 .page-header {
@@ -125,21 +120,22 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: min(330px, 36vw);
+  height: 25vmin;
   width: 100%;
 }
 
 .title-icon {
-  width: min(250px, 25vw);
+  height: 80%;
 }
 
 .title-title {
-  width: min(350px, 40vw);
+  height: 50%;
 }
 
 .title-apps {
   text-align: center;
-  transform: translateY(30px);
+  transform: translateY(25%);
+  height: 100%;
 }
 
 .appstore {
@@ -149,32 +145,37 @@ body {
 }
 
 .appstore img {
-  width: min(130px, 18vw);
-  height: 100%;
+  width: 15vmin;
 }
 
 /* Body */
 .page-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 50vh;
+  margin-bottom: min(100px, 30vmin);
 }
 
 .description {
   margin: 10px auto;
-  padding: 0 20px;
   text-align: center;
 }
 
 .description p {
-  font-size: min(1.6rem, 5vw);
+  font-size: var(--font-size);
 }
 
 .screenshots {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 30vh;
 }
 
 .screenshots img {
-  width: 30%;
+  max-height: 100%;
+  max-width: 30%;
   margin-top: 20px;
 }
 
@@ -187,7 +188,13 @@ body {
   font-size: 2rem;
 }
 
-/* Mobile */
+/* Responsive */
+@media (max-width: 1000px) {
+  .cubes {
+    width: 100px;
+  }
+}
+
 @media (max-width: 500px) {
   .screenshots img:last-child {
     margin-bottom: 100px;
@@ -207,9 +214,10 @@ body {
 
   .screenshots {
     flex-direction: column;
+    height: 100%;
   }
 
   .screenshots img {
-    width: 80%;
+    max-width: 80%;
   }
 }

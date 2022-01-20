@@ -324,24 +324,28 @@ p {
 
 .title-decor {
   position: absolute;
-  z-index: -2;
-  top: -5vw;
-  left: -12vw;
-  width: min(600px, 60vw);
+  z-index: 0;
+  top: -1vmin;
+  left: -5vmin;
+  width: min(550px, 50vmin);
 }
 
 .screenshots.racer {
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .screenshots.racer img {
-  max-width: 48%;
+  max-width: 45%;
 }
 
 /* Responsive */
 @media (max-width: 1000px) {
   .cubes {
     width: 100px;
+  }
+  .title-decor {
+    left: 0px;
   }
 }
 

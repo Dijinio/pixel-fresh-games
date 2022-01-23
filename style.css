@@ -7,17 +7,17 @@
     url("./assets/general/GeosansLight.ttf") format("truetype");
 }
 
-html {
+html,
+body {
   scroll-behavior: smooth;
+  font-family: "Geosans";
+  height: 100vh;
+  color: #fff;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-body {
-  font-family: "Geosans";
-  color: #fff;
 }
 
 * {
@@ -27,7 +27,7 @@ body {
 }
 
 :root {
-  --main-background: #1fd1d7;
+  --main-background: #0bb0ec;
   --crypto-stars-bg: #2b2b2b;
   --yellow-text-clr: #ffd862;
   --default-text-color: #fff;
@@ -41,9 +41,10 @@ p {
 
 .page-wrapper {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  scroll-snap-type: y mandatory;
 }
 
 .page-container {
@@ -62,10 +63,10 @@ p {
   top: calc(50vh - 50px);
   right: 5px;
   width: 40px;
-  height: 120px;
+  height: 90px;
   padding: 8px 0;
   background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 #scroller a {
@@ -98,12 +99,11 @@ p {
   height: 30px !important;
   z-index: 23;
   transform: scale(0);
-  transition: transform .1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
 }
 
 .scroll-icon.active {
   transform: scale(1);
-
 }
 
 #crypto-stars {
@@ -152,11 +152,9 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 30vh;
 }
 
 .screenshot {
-  max-height: 100%;
   margin-top: 20px;
   cursor: pointer;
 }
@@ -205,7 +203,7 @@ p {
 }
 
 .main-logo {
-  max-width: 90%;
+  max-width: min(90%, 100vmin);
   margin: min(300px, 50vw) auto 3vw auto;
 }
 
@@ -216,7 +214,7 @@ p {
 .main-icons {
   display: flex;
   justify-content: space-between;
-  max-width: min(80%, 100%);
+  max-width: min(80%, 100vmin);
   margin: 0 auto;
 }
 
@@ -252,6 +250,10 @@ p {
 
 .main-links p {
   margin-left: 5px;
+}
+
+.desc-introduce {
+  margin-top: 8vmin;
 }
 
 .pp {
@@ -290,7 +292,6 @@ p {
   flex-direction: column;
   justify-content: space-around;
   min-height: 50vh;
-  margin-bottom: min(100px, 30vmin);
 }
 
 .description {
@@ -315,6 +316,7 @@ p {
 
 .screenshots.crypto img {
   max-width: 30%;
+  max-height: 30vmin;
 }
 
 /* Pixel Car Racer */
@@ -350,10 +352,6 @@ p {
 }
 
 @media (max-width: 500px) {
-  .screenshots img:last-child {
-    margin-bottom: 100px;
-  }
-
   .cubes {
     width: 70px;
   }
@@ -365,17 +363,26 @@ p {
   .appstore {
     margin-top: 5px;
   }
+}
 
-  .screenshots {
-    flex-direction: column;
-    height: 100%;
+@media (orientation: landscape) and (max-width: 1200px) {
+  .main-logo {
+    margin-top: 15vmin;
+    margin-bottom: 3vmin;
   }
 
-  .screenshots img {
-    min-width: 90% !important;
-    max-width: 95% !important;
+  .screenshots.racer {
+    justify-content: center;
+  }
+
+  .screenshots.racer img {
+    max-height: 22vh;
+    margin: 1vmin;
   }
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (max-height: 500px) {
+  body {
+    --font-size: 16px;
+  }
 }

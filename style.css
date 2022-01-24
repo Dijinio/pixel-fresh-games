@@ -53,6 +53,10 @@ p {
   padding: 0 40px;
 }
 
+#wrapper {
+  transition: transform .5s ease-in-out;
+}
+
 #scroller {
   position: fixed;
   display: flex;
@@ -150,7 +154,7 @@ p {
 
 .screenshots {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -163,7 +167,7 @@ p {
   position: fixed;
   height: 100%;
   width: 100%;
-  z-index: 10;
+  z-index: 30;
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -178,7 +182,7 @@ p {
 #galleryImage {
   max-height: 80%;
   max-width: 80%;
-  z-index: 11;
+  z-index: 31;
   opacity: 0;
   box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.7);
   transition: opacity 0.5s ease;
@@ -333,7 +337,12 @@ p {
 }
 
 .screenshots.racer {
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.screenshots.racer div {
+  display: flex;
   justify-content: space-evenly;
 }
 
@@ -371,13 +380,8 @@ p {
     margin-bottom: 3vmin;
   }
 
-  .screenshots.racer {
-    justify-content: center;
-  }
-
   .screenshots.racer img {
     max-height: 22vh;
-    margin: 1vmin;
   }
 }
 

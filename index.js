@@ -5,20 +5,25 @@ const scrollerButtons = [...document.getElementById("scroller").children];
 const scrollerIcons = [...document.querySelectorAll(".scroll-icon")];
 const icons = [...document.querySelector(".main-icons").children];
 const sections = [...document.querySelectorAll(".page-wrapper")];
-let sectionIndex = 0;
+const wrapper = document.getElementById("wrapper");
 const sectionSize = sections.length;
+let sectionIndex = 0;
 
 icons.forEach((icon) => {
-  icon.addEventListener("click", () => {
+  icon.addEventListener("click", (e) => {
+    e.preventDefault();
     const section = getSection(icon);
     if (!section) return;
+    wrapper.style.transform = `translateY(-${sectionIndex * 100}vh)`;
     activateIcon(section);
   });
 });
 
 scrollerButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
     const section = getSection(btn);
+    wrapper.style.transform = `translateY(-${sectionIndex * 100}vh)`;
     activateIcon(section);
   });
 });
@@ -26,8 +31,10 @@ scrollerButtons.forEach((btn) => {
 function getSection(element) {
   const href = element.attributes.href.nodeValue;
   // set global section index
-  sectionIndex = sections.findIndex((s) => s.id === href.replace("#", ""));
-
+  const sIndex = sections.findIndex((s) => s.id === href.replace("#", ""));
+  if (sIndex > -1) {
+    sectionIndex = sIndex;
+  }
   return sections.find((s) => s.id === href.replace("#", ""));
 }
 
@@ -60,29 +67,24 @@ document.addEventListener("touchstart", (e) => {
     const timeElapsed = new Date() - startTime;
 
     if (startPos + 100 < endPos && timeElapsed < 1000) {
-      setTimeout(() => {
-        handlePageChange(false);
-      }, 50);
+      handlePageChange(false);
     }
     if (startPos - 100 > endPos && timeElapsed < 1000) {
-      setTimeout(() => {
-        handlePageChange(true);
-      }, 50);
+      handlePageChange(true);
     }
   });
 });
 
 function handlePageChange(next) {
   pause = true;
-  const scrollOptions = {
-    block: "start",
-    inline: "nearest",
-    easing: "linear",
-  };
+
   const id = manageSection(sectionSize, next);
+  const scrollAmount = id * 100;
+  wrapper.style.transform = `translateY(-${scrollAmount}vh)`;
+
   const section = sections[id];
   activateIcon(section);
-  section.scrollIntoView(scrollOptions);
+
   setTimeout(() => {
     pause = false;
   }, 700);

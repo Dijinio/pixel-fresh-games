@@ -207,8 +207,8 @@ p {
 }
 
 .main-logo {
-  max-width: min(90%, 100vmin);
-  margin: min(300px, 50vw) auto 3vw auto;
+  max-width: 70vmin;
+  margin: 20vh auto 3vmin auto;
 }
 
 .main-logo img {
@@ -218,7 +218,7 @@ p {
 .main-icons {
   display: flex;
   justify-content: space-between;
-  max-width: min(80%, 100vmin);
+  max-width: 70vmin;
   margin: 0 auto;
 }
 
@@ -238,7 +238,7 @@ p {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 5vmin;
   margin-bottom: min(100px, 30vmin);
 }
 
@@ -257,7 +257,7 @@ p {
 }
 
 .desc-introduce {
-  margin-top: 8vmin;
+  margin-top: 5vh;
 }
 
 .pp {
@@ -375,18 +375,38 @@ p {
 }
 
 @media (orientation: landscape) and (max-width: 1200px) {
-  .main-logo {
-    margin-top: 15vmin;
-    margin-bottom: 3vmin;
-  }
-
   .screenshots.racer img {
     max-height: 22vh;
   }
 }
 
-@media (orientation: landscape) and (max-height: 500px) {
+@media (max-width: 800px) and (min-height: 900px) {
+  /* .main-logo {
+    margin-top: 30vh;
+  } */
+}
+/*
+@media (max-height: 950px){
+  .main-logo {
+    margin-top: 10vmin;
+    margin-bottom: 3vmin;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 950px) and (min-height: 650px){
+  .main-logo {
+    margin-top: 30vmin;
+    margin-bottom: 3vmin;
+  }
+} */
+
+@media (orientation: landscape) and (max-height: 650px) {
   body {
     --font-size: 16px;
+  }
+
+  .main-logo {
+    max-width: 70vmin;
   }
 }

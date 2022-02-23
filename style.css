@@ -208,7 +208,7 @@ p {
 
 .main-logo {
   max-width: 70vmin;
-  margin: 20vh auto 3vmin auto;
+  margin: 25vh auto 3vmin auto;
 }
 
 .main-logo img {
@@ -374,7 +374,7 @@ p {
   }
 }
 
-@media (orientation: landscape) and (max-width: 1200px) {
+@media (orientation: landscape) {
   .screenshots.racer img {
     max-height: 22vh;
   }

@@ -7,7 +7,31 @@ const icons = [...document.querySelector(".main-icons").children];
 const sections = [...document.querySelectorAll(".page-wrapper")];
 const wrapper = document.getElementById("wrapper");
 const sectionSize = sections.length;
-let sectionIndex = 0;
+const locationSection = window.location.hash;
+let sectionIndex =
+  locationSection === "#main" || !locationSection
+    ? 0
+    : locationSection === "#crypto-stars"
+    ? 1
+    : 2;
+const initialSection = sections[sectionIndex];
+
+setTimeout(() => {
+  wrapper.style.transform = `translateY(-${sectionIndex * 100}vh)`;
+  activateIcon(initialSection);
+}, 100);
+
+function addHashToUrl(index) {
+  if (index === 0) {
+    window.location.hash = "main";
+  }
+  if (index === 1) {
+    window.location.hash = "crypto-stars";
+  }
+  if (index === 2) {
+    window.location.hash = "car-racer";
+  }
+}
 
 icons.forEach((icon) => {
   icon.addEventListener("click", (e) => {
@@ -16,6 +40,7 @@ icons.forEach((icon) => {
     if (!section) return;
     wrapper.style.transform = `translateY(-${sectionIndex * 100}vh)`;
     activateIcon(section);
+    addHashToUrl(sectionIndex);
   });
 });
 
@@ -25,21 +50,24 @@ scrollerButtons.forEach((btn) => {
     const section = getSection(btn);
     wrapper.style.transform = `translateY(-${sectionIndex * 100}vh)`;
     activateIcon(section);
+    addHashToUrl(sectionIndex);
   });
 });
 
 function getSection(element) {
   const href = element.attributes.href.nodeValue;
   // set global section index
-  const sIndex = sections.findIndex((s) => s.id === href.replace("#", ""));
+  const sIndex = sections.findIndex(
+    (s) => s.dataset.anchor === href.replace("#", "")
+  );
   if (sIndex > -1) {
     sectionIndex = sIndex;
   }
-  return sections.find((s) => s.id === href.replace("#", ""));
+  return sections.find((s) => s.dataset.anchor === href.replace("#", ""));
 }
 
 function activateIcon(section) {
-  const iconId = `${section.id}-scroller`;
+  const iconId = `${section.dataset.anchor}-scroller`;
   const icon = document.getElementById(iconId);
   clearScroller();
   icon.classList.add("active");
@@ -85,6 +113,7 @@ function handlePageChange(next) {
   const section = sections[id];
   activateIcon(section);
 
+  addHashToUrl(sectionIndex);
   setTimeout(() => {
     pause = false;
   }, 700);

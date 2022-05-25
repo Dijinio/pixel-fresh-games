@@ -110,7 +110,7 @@ p {
   transform: scale(1);
 }
 
-#crypto-stars {
+.crypto-stars {
   background: var(--crypto-stars-bg);
 }
 
@@ -202,7 +202,7 @@ p {
 
 /* Main */
 
-#main {
+.main {
   background-color: var(--main-background);
 }
 
@@ -324,7 +324,7 @@ p {
 }
 
 /* Pixel Car Racer */
-#car-racer {
+.car-racer {
   background-color: #ee6085;
 }
 

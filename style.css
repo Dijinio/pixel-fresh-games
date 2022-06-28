@@ -67,9 +67,9 @@ p {
   top: calc(50vh - 50px);
   right: 5px;
   width: 40px;
-  height: 90px;
+  height: 180px;
   padding: 8px 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
 }
 
@@ -88,7 +88,7 @@ p {
   z-index: 22;
   height: 10px;
   width: 10px;
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: #fff;
   border-radius: 50%;
 }
 
@@ -328,14 +328,6 @@ p {
   background-color: #ee6085;
 }
 
-.title-decor {
-  position: absolute;
-  z-index: 0;
-  top: -1vmin;
-  left: -5vmin;
-  width: min(550px, 50vmin);
-}
-
 .racer-page-body {
   display: flex;
   flex-direction: column;
@@ -361,6 +353,34 @@ p {
   height: 25vmin;
 }
 
+/* Doodle Racer */
+.doodle-racer {
+  background-color: #0bb0ec;
+}
+
+/* Morrok */
+.morrok {
+  background-color: #000;
+}
+
+.morrok-apps {
+  height: 50%;
+}
+
+.morrok-appstore {
+  margin-top: 30px;
+}
+
+/* Doodle climb */
+.doodle-climb {
+  background-color: #ee6085;
+}
+
+.climb-apps {
+  height: 45%;
+}
+
+/* ---------------------------------------- */
 /* Responsive */
 @media (max-width: 1000px) {
   .cubes {
@@ -382,6 +402,14 @@ p {
 
   .appstore {
     margin-top: 5px;
+  }
+
+  .appstore.morrok-appstore {
+    margin-top: 10px;
+  }
+
+  .title-apps.morrok-apps, .title-apps.climb-apps {
+    transform: translateY(12px);
   }
 }
 

@@ -8,18 +8,33 @@ const sections = [...document.querySelectorAll(".page-wrapper")];
 const wrapper = document.getElementById("wrapper");
 const sectionSize = sections.length;
 const locationSection = window.location.hash;
-let sectionIndex =
-  locationSection === "#main" || !locationSection
-    ? 0
-    : locationSection === "#crypto-stars"
-    ? 1
-    : 2;
+
+let sectionIndex = getInitialSection(locationSection);
 const initialSection = sections[sectionIndex];
 
 setTimeout(() => {
   wrapper.style.transform = `translateY(-${sectionIndex * 100}vh)`;
   activateIcon(initialSection);
 }, 100);
+
+function getInitialSection(section) {
+  switch (section) {
+    case "#main":
+      return 0;
+    case "#crypto-stars":
+      return 1;
+    case "#car-racer":
+      return 2;
+    case "#doodle-racer":
+      return 3;
+    case "#morrok":
+      return 4;
+    case "#doodle-climb":
+      return 5;
+    default:
+      return 0;
+  }
+}
 
 function addHashToUrl(index) {
   if (index === 0) {
@@ -30,6 +45,15 @@ function addHashToUrl(index) {
   }
   if (index === 2) {
     window.location.hash = "car-racer";
+  }
+  if (index === 3) {
+    window.location.hash = "doodle-racer";
+  }
+  if (index === 4) {
+    window.location.hash = "morrok";
+  }
+  if (index === 5) {
+    window.location.hash = "doodle-climb";
   }
 }
 

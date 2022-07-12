@@ -54,7 +54,7 @@ p {
 }
 
 #wrapper {
-  transition: transform .5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 #scroller {
@@ -140,8 +140,28 @@ p {
   align-items: center;
 }
 
+.page-footer.first {
+  height: 40px;
+}
+
+.page-footer.last {
+  bottom: 50px;
+}
+
 .page-footer p {
   font-size: var(--font-size);
+}
+
+.last-page-text {
+  position: absolute;
+  bottom: 10px;
+  font-size: 12px;
+  max-width: 60%;
+}
+
+.last-page-text p {
+  text-align: center;
+  font-size: 12px;
 }
 
 .cubes {
@@ -154,12 +174,13 @@ p {
 
 .screenshots {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 1em;
+  margin-top: 10px;
 }
 
 .screenshot {
-  margin-top: 20px;
   cursor: pointer;
 }
 
@@ -345,11 +366,10 @@ p {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 1em;
 }
 
 .screenshots.racer img {
-  margin-top: 10px;
   height: 25vmin;
 }
 
@@ -386,8 +406,13 @@ p {
   .cubes {
     width: 100px;
   }
+
   .title-decor {
     left: 0px;
+  }
+
+  .page-footer.last {
+    bottom: 60px;
   }
 }
 
@@ -408,7 +433,8 @@ p {
     margin-top: 10px;
   }
 
-  .title-apps.morrok-apps, .title-apps.climb-apps {
+  .title-apps.morrok-apps,
+  .title-apps.climb-apps {
     transform: translateY(12px);
   }
 }

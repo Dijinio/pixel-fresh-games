@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "Geosans";
+    src: url("./assets/general/GeosansLight.eot");
+    src: url("./assets/general/GeosansLight.eot?#iefix")
+    format("embedded-opentype"),
+    url("./assets/general/GeosansLight.woff") format("woff"),
+    url("./assets/general/GeosansLight.ttf") format("truetype");
+}
+
+body {
+    background: #0bb0ec;
+}
+
+.wrapper {
+    padding: 10px 60px 10px 60px;
+}
+
+.privacy-text-title {
+	text-align: center;
+	font-family: "Geosans";
+    font-size: 30px;
+    text-transform: none;
+	color: #ffffff;
+    letter-spacing: 2px;
+    padding: 20px 0px 0px 0px;
+}
+
+.privacy-text-subtitle {
+	text-align: left;
+    font-family: "Geosans";
+    font-size: 24px;
+    text-transform: none;
+	color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.privacy-text-list {
+    text-align: left;
+    text-transform: none;
+    list-style-type: disc;
+    padding: 0px 20px 0px 30px;
+}
+
+.privacy-link {
+	text-decoration: none;
+	color: #ffd862;
+}
+
+.privacy-text {
+	text-align: left;
+	font-family: "Geosans";
+    font-size: 18px;
+    text-transform: none;
+	color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.footer {
+    padding: 20px 0px 10px 0px;
+}
+
+.footer-text {
+	text-align: center;
+	font-family: "Geosans";
+    font-size: 24px;
+    text-transform: none;
+	color: #ffffff;
+    letter-spacing: 2px;
+    padding: 10px 0px 10px 0px;
+}

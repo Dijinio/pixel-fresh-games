@@ -134,6 +134,7 @@ p {
   min-width: 200px;
   left: calc(50% - 100px);
   bottom: 1vw;
+  bottom: env(safe-area-inset-bottom);
   display: flex;
   flex-direction: column;
   justify-content: center;
